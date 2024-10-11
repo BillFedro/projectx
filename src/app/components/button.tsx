@@ -8,19 +8,19 @@ export const ButtonGoogle = () => {
     return (
         <button className="flex items-center justify-center bg-white text-black rounded-full py-2 px-4 mb-4">
             <FcGoogle className="mr-2" size={20}/>
-            <span>Sign in</span>
+            <span>Sign in Muhammad Bill Fedro Saputra </span>
 
           </button>
 
         
     )
-}
+}   
 
 export const ButtonApple = () => {
     return (
-        <button className="flex items-center justify-center bg-white text-black rounded-full py-2 px-4 mb-4">
+        <button className="flex items-center justify-center bg-white text-black rounded-full py-2 px-4 mb-4 ">
             <FaApple className="mr-2" size={20}/>
-            <span>Sign in</span>
+            <span>Sign up with Apple</span>
 
           </button>
 

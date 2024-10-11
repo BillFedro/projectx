@@ -74,4 +74,4 @@ const ModalLogin: React.FC<ModalLoginProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default ModalLogin;  
+export default ModalLogin;    
