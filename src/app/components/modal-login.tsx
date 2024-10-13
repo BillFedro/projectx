@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { FaTwitter, FaGoogle, FaApple } from 'react-icons/fa';
+import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { AiFillApple } from 'react-icons/ai';
+import { FaXTwitter } from 'react-icons/fa6';
 
 interface ModalLoginProps {
   isOpen: boolean;
@@ -7,71 +9,62 @@ interface ModalLoginProps {
 }
 
 const ModalLogin: React.FC<ModalLoginProps> = ({ isOpen, onClose }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Implementasi logika login di sini
-    console.log('Login dengan:', email, password);
-  };
-
   if (!isOpen) return null;
+  
+
+  
+
+  
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-black rounded-2xl p-8 w-full max-w-md">
-        <div className="flex justify-between items-center mb-6">
-          <button onClick={onClose} className="text-gray-400 hover:text-white">
-            &times;
-          </button>
-          <FaTwitter className="text-white text-3xl" />
-          <div className="w-6"></div> {/* Spacer untuk menjaga ikon di tengah */}
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      <div className="bg-black text-white rounded-2xl w-full max-w-md p-8 relative">
+        <button onClick={onClose} className="absolute top-4 left-4 text-2xl">&times;</button>
+        <div className="flex justify-center mb-8">
+          <FaXTwitter className="text-3xl" />
         </div>
-        <h2 className="text-white text-3xl font-bold mb-8">Sign in to X</h2>
-        <button className="w-full bg-white text-black rounded-full py-2 px-4 mb-4 font-bold flex items-center justify-center">
-          <FaGoogle className="mr-2" />
-          Sign in with Google
+        
+        <h2 className="text-3xl font-bold text-center mb-8">Sign in to X</h2>
+        
+        <button className="w-full flex items-center justify-center px-4 py-2 border border-gray-700 rounded-full text-sm font-medium mb-4 hover:bg-gray-800 transition">
+          <FcGoogle className="w-5 h-5 mr-2" />
+          Sign in as Muhammad Bill Fedro
         </button>
-        <button className="w-full bg-white text-black rounded-full py-2 px-4 mb-4 font-bold flex items-center justify-center">
-          <FaApple className="mr-2" />
+        
+        <button className="w-full flex items-center justify-center px-4 py-2 border border-gray-700 rounded-full text-sm font-medium mb-4 hover:bg-gray-800 transition">
+          <AiFillApple className="w-5 h-5 mr-2" />
           Sign in with Apple
         </button>
-        <div className="flex items-center my-4">
-          <div className="flex-grow border-t border-gray-600"></div>
-          <span className="px-4 text-gray-400 text-sm">or</span>
-          <div className="flex-grow border-t border-gray-600"></div>
+        
+        <div className="relative my-6">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-600"></div>
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-black text-gray-400">or</span>
+          </div>
         </div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Phone, email address, or username"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-black text-white border border-gray-700 rounded-md p-2 mb-4"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-black text-white border border-gray-700 rounded-md p-2 mb-4"
-            required
-          />
-          <button type="submit" className="w-full bg-white text-black rounded-full py-2 px-4 font-bold">
-            Log in
-          </button>
-        </form>
-        <button className="w-full text-white bg-transparent border border-gray-700 rounded-full py-2 px-4 mt-4 font-bold">
+        
+        <input
+          type="text"
+          placeholder="Phone, email, or username"
+          className="w-full px-3 py-2 bg-black border border-gray-600 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4"
+        />
+        
+        <button className="w-full bg-white text-black font-bold py-2 px-4 rounded-full mb-4 hover:bg-gray-200 transition">
+          Next
+        </button>
+        
+        <button className="w-full bg-black text-white font-bold py-2 px-4 rounded-full border border-gray-600 mb-4 hover:bg-gray-800 transition">
           Forgot password?
         </button>
-        <p className="text-gray-400 mt-8">
-          Don't have an account? <a href="#" className="text-blue-400">Sign up</a>
+        
+        <p className="text-center text-sm text-gray-400">
+          Don't have an account? <a href="#" className="text-blue-400 hover:underline">Sign up</a>
         </p>
       </div>
     </div>
   );
 };
 
-export default ModalLogin;    
+export default ModalLogin; 
