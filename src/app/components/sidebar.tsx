@@ -69,7 +69,7 @@ const Sidebar: React.FC = () => {
         </div>
         <div className="flex-grow">
           <div className="font-bold">Muhammad Bill Fedr...</div>
-          <div className="text-gray-500">@DRoTooo</div>
+          <div className="text-gray-500">@DRofooo</div>
         </div>
         <div>...</div>
       </div>

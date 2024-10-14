@@ -16,7 +16,6 @@ const TrendingSidebar: React.FC = () => {
 
   return (
     <div className="bg-black text-white w-80 p-4 space-y-4">
-      {/* Search Bar */}
       <div className="relative">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2
          text-gray-400 size={20}" />
@@ -28,7 +27,6 @@ const TrendingSidebar: React.FC = () => {
         />
       </div>
 
-      {/* Premium Promo */}
       <div className="bg-gradient-to-r from-black-900 to-purple-900 rounded-xl p-4">
         <h2 className="font-bold text-xl mb-2">Expiring soon!</h2>
         <p className="mb-4">Get up to 40% off X Premium</p>
