@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
+
+
+
+
 
 
 
@@ -28,12 +32,7 @@ export const ButtonApple = () => {
         
     )      
 }
-export const ButtonCreateAccount = () => {
-    return (
-        <button className="bg-blue-500 text-white rounded-full py-2 px-20 mb-4">Create Account</button>
-        
-    )
-}
+
 
 
 

@@ -2,38 +2,32 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation';
 import Sidebar from '../components/sidebar'
+import XFeed from '../components/feed'
+import TrendingSidebar from '../components/xsidebar'
 
-
-const page = () => {
+const Page = () => {
   const [username, setUsername] = useState('');
   const router = useRouter();
 
   useEffect(() => {
     // Ambil nama pengguna dari localStorage
     const storedUsername = localStorage.getItem('username');
-    console.log('Retrieved Username:', storedUsername); // Tambahkan ini
+    console.log('Retrieved Username:', storedUsername);
     if (storedUsername) {
       setUsername(storedUsername);
     }
   }, []);
 
-  useEffect(() => {
-    // Cek token di localStorage
-    const token = localStorage.getItem('token');
-    console.log('Token:', token);
-    if (!token) {
-      router.push('/'); // Arahkan ke halaman login jika tidak ada token
-    }
-  }, [router]);
   return (
-    <div>
-      {/* <Sidebar /> */}
-      <div>
-        <p>Welcome, {username ? username : 'Guest'}!</p>
+    <div className="flex bg-black min-h-screen">
+      <Sidebar />
+      <div className="flex-grow">
+        <p className="p-4 text-white">Welcome, {username ? username : 'Guest'}!</p>
+        <XFeed />
       </div>
+      <TrendingSidebar />
     </div>
-
   )
 }
 
-export default page;
+export default Page;
